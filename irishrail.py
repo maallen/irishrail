@@ -5,11 +5,14 @@ import sys
 
 from xml.etree import ElementTree
 
-if len(sys.argv) < 2:
-    print("ERROR: No station name parameter passed to script")
+if len(sys.argv) < 3:
+    print("ERROR: No enough parameters provided")
+    print("usage: irishrail.py <departure station> <destination station> [... <departure station N>]")
     exit(1)
 
 station = sys.argv[1]
+
+dest_stations = sys.argv[2:]
 
 url = "http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByNameXML?StationDesc=" + station
 
@@ -22,7 +25,7 @@ msg = ""
 for train_data in tree:
     dest = train_data.find('{http://api.irishrail.ie/realtime/}Destination').text
     late = train_data.find('{http://api.irishrail.ie/realtime/}Late').text
-    if dest == "Dublin Heuston" or dest == "Grand Canal Dock":
+    if dest in dest_stations:
         msg = msg + train_data.find('{http://api.irishrail.ie/realtime/}Scharrival').text + " to " + dest
         if late == "0":
             msg = msg + " is on time"
