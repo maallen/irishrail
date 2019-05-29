@@ -32,8 +32,4 @@ for train_data in tree:
         else:
             msg = msg + " is " + late + " minutes late.\n"
 
-print(msg)
-
-
-
-
+print(msg.strip())
