@@ -5,16 +5,20 @@ import sys
 
 from xml.etree import ElementTree
 
-if len(sys.argv) < 3:
+if len(sys.argv) < 4:
     print("ERROR: Not enough parameters provided")
-    print("usage: irishrail.py <departure station> <destination station> [... <departure station N>]")
+    print("usage: irishrail.py <departure station> <time range in minutes> <destination station> "
+          "[... <departure station N>]")
     exit(1)
 
 station = sys.argv[1]
 
-dest_stations = sys.argv[2:]
+time_range = sys.argv[2]
 
-url = "http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByNameXML?StationDesc=" + station
+dest_stations = sys.argv[3:]
+
+url = "http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByNameXML?StationDesc=" + station \
+      + "&NumMins=" + time_range
 
 response = requests.get(url)
 
