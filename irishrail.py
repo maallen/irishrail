@@ -6,7 +6,7 @@ import sys
 from xml.etree import ElementTree
 
 if len(sys.argv) < 3:
-    print("ERROR: No enough parameters provided")
+    print("ERROR: Not enough parameters provided")
     print("usage: irishrail.py <departure station> <destination station> [... <departure station N>]")
     exit(1)
 
