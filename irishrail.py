@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python
 
 import requests
 import sys
@@ -28,7 +28,7 @@ for train_data in tree:
     if dest in dest_stations:
         msg = msg + train_data.find('{http://api.irishrail.ie/realtime/}Scharrival').text + " to " + dest
         if late == "0":
-            msg = msg + " is on time"
+            msg = msg + " is on time."
         else:
             msg = msg + " is " + late + " minutes late.\n"
 
