@@ -32,8 +32,8 @@ for train_data in tree:
     if dest in dest_stations:
         msg = msg + train_data.find('{http://api.irishrail.ie/realtime/}Scharrival').text + " to " + dest
         if late == "0":
-            msg = msg + " is on time."
+            msg = msg + " is on time.\n"
         else:
-            msg = msg + " is " + late + " minutes late.\n"
+            msg = msg + " is " + late + " minute(s) late.\n"
 
 print(msg.strip())
