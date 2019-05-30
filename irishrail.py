@@ -17,7 +17,7 @@ time_range = sys.argv[2]
 
 dest_stations = sys.argv[3:]
 
-url = "http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByNameXML?StationDesc=" + station \
+url = "http://api.irishrail.ie/realtime/realtime.asmx/getStationDataByNameXML_withNumMins?StationDesc=" + station \
       + "&NumMins=" + time_range
 
 response = requests.get(url)
