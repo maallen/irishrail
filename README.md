@@ -16,4 +16,4 @@ It also takes the following optional arguments:
 ### Examples
 `irishrail.py Portarlington 60 "Dublin Heuston" "Grand Canal Dock" "Portlaoise"`
 
-`irishrail.py --ifttt "http://www.ifttt.com/my/webhook/url Maynooth 90 "Dublin Connolly"`
+`irishrail.py --ifttt "http://www.ifttt.com/my/webhook/url" Maynooth 90 "Dublin Connolly"`
