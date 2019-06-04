@@ -9,9 +9,11 @@ The script takes 3 positional parameters in the following order:
 
 ### Optional Arguments
 It also takes the following optional arguments:
-1. -h, prints help information for the script.
-1. --ifttt, indicates an IFTTT webhook url to post web requests to with script output passed as 'value1'
+1. **-h**, prints help information for the script.
+1. **--ifttt**, indicates an IFTTT webhook url to post web requests to with script output passed as 'value1'
 
 
-### Example
+### Examples
 `irishrail.py Portarlington 60 "Dublin Heuston" "Grand Canal Dock" "Portlaoise"`
+
+`irishrail.py --ifttt "http://www.ifttt.com/my/webhook/url Maynooth 90 "Dublin Connolly"`
