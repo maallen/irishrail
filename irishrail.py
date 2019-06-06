@@ -38,6 +38,8 @@ for train_data in tree:
         msg = msg + train_data.find('{http://api.irishrail.ie/realtime/}Scharrival').text + " to " + dest
         if late == "0":
             msg = msg + " is on time.\n"
+        elif late.startswith("-"):
+            msg = msg + " is " + late[1:] + " minutes(s) early.\n"
         else:
             msg = msg + " is " + late + " minute(s) late.\n"
 
