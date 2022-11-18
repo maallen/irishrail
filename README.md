@@ -26,3 +26,4 @@ It's possible to send the script output to IFTTT by passing your maker webhook s
 The output from the script is available in the 'value1' variable which can be utilised by configuring your IFTTT webhook applet to forward or manipulate the script output as required.
 
 
+
